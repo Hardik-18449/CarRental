@@ -1,0 +1,79 @@
+.admin-panel {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f6f8;
+  border-radius: 12px;
+}
+
+.admin-panel h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.add-car {
+  margin-bottom: 30px;
+}
+
+.add-car form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-car input {
+  padding: 10px;
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-car button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-car button:hover {
+  background-color: #43a047;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+table th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.status.confirmed {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.status.completed {
+  color: #2196f3;
+  font-weight: 500;
+}
+
+.status.cancelled {
+  color: #f44336;
+  font-weight: 500;
+}

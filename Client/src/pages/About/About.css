@@ -1,0 +1,175 @@
+/* Base */
+.about-page {
+  width: 100%;
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  height: 450px;
+  width: 100%;
+}
+
+
+
+.about-hero ::before{
+   content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+     rgba(0, 0, 0, 0.144) 0%,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0) 55%
+  );
+}
+
+
+
+
+
+.about-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.about-hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.about-hero-text p {
+  font-size: 20px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Common Section */
+.about-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4f46e5;
+}
+
+.about-section p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+/* Image + Content Layout */
+.image-left,
+.image-right {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.image-left img,
+.image-right img {
+  width: 50%;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  width: 200px;
+}
+
+.image-left div,
+.image-right div {
+  width: 50%;
+}
+
+/* Reverse layout */
+.image-right {
+  flex-direction: row-reverse;
+}
+
+/* Mission Section */
+.mission {
+  background-color: #eef2ff;
+  padding: 60px 40px;
+  border-radius: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-hero-text h1 {
+    font-size: 42px;
+  }
+
+  .about-hero-text p {
+    font-size: 18px;
+  }
+
+  .image-left,
+  .image-right {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-left,
+  .image-right {
+    flex-direction: column;
+  }
+
+  .image-left img,
+  .image-right img,
+  .image-left div,
+  .image-right div {
+    width: 100%;
+  }
+
+  .about-section {
+    margin: 60px auto;
+  }
+
+  .about-section h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 60vh;
+  }
+
+  .about-hero-text h1 {
+    font-size: 32px;
+  }
+
+  .about-hero-text p {
+    font-size: 16px;
+  }
+}

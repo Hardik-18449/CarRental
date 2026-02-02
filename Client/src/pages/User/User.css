@@ -1,0 +1,96 @@
+.user-panel {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  background-color: #f4f6f8;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  position: relative;
+}
+
+.user-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+.user-card h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.logout-btn {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  border: none;
+  background-color: #ff4b5c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #ff2e44;
+}
+
+/* Booking Table */
+.booking-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.booking-table th,
+.booking-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.booking-table th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.booking-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Status Colors */
+.status.confirmed {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.status.completed {
+  color: #2196f3;
+  font-weight: 500;
+}
+
+.status.cancelled {
+  color: #f44336;
+  font-weight: 500;
+}
