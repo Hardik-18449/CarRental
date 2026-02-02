@@ -8,3 +8,5 @@ server/.env
 
 server/Readme.md
 
+package-lock.json
+package.json

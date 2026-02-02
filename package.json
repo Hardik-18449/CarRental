@@ -1,0 +1,23 @@
+{
+  "name": "carrental",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Hardik-18449/CarRental#readme",
+  "bugs": {
+    "url": "https://github.com/Hardik-18449/CarRental/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hardik-18449/CarRental.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "npx concurrently \"npm run server\" \"npm run client\"",
+     "server": "cd server && npm run start",
+     "client": "cd Client && npm run dev"
+  }
+}
