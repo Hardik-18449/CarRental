@@ -12,6 +12,9 @@
     color: white;
 }
 
+h3{
+    text-decoration: none;
+}
 
 .hero::before{
    content: "";

@@ -5,9 +5,9 @@ const User = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState({
-    name: "Hardik Bhayre",
-    email: "hardik@example.com",
-    _id: "1234567890abcdef",
+    name: "Hardik",
+    email: "hardikgurjar174@gmail.com",
+    _id: "6989cdd3810a0887161c8b7f",
   });
 
   const [bookings] = useState([

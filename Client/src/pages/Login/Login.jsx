@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../services/api";
 import "./Login.css";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
+
 
 const Login = () => {
+
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,20 +22,15 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const res = await API.post("/auth/login", formData);
     console.log("Login Success:", res.data);
-
-    localStorage.setItem("token", res.data.token);
-    localStorage.setItem("role", res.data.user.role);
-
-    window.dispatchEvent(new Event("authChange"));
+    login(res.data.token, res.data.user.role);
 
     alert(res.data.message || "Login successful");
 
-   
     if (res.data.user.role === "admin") {
       navigate("/admin");
     } else {
@@ -41,6 +41,7 @@ const Login = () => {
     setError(err.response?.data?.message || "Login failed");
   }
 };
+
 
 
   return (

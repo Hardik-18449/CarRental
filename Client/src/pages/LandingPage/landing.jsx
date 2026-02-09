@@ -29,7 +29,7 @@ const LandingPage = () => {
           <div className="cars-slide"><img src={landing5} alt="" /></div>
       
         </div>
-            <div arial-hidden  className="group">
+            <div className="group">
           <div className="cars-slide"><img src={landing1} alt="" /></div>
           <div className="cars-slide"><img src={landing2} alt="" /></div>
           <div className="cars-slide"><img src={landing3} alt="" /></div>

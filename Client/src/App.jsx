@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ProtectedRoute from './routes/ProtectedRoutes';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 import Home from './pages/Home/Home';
@@ -12,32 +13,30 @@ import Contact from './pages/Contact/Contact';
 import User from './pages/User/User';
 import Admin from './pages/AdminPanel/Admin';
 import Menu from './pages/MobileMenu/menu';
+import Booking from './pages/Booking/booking';
+import ConfirmBooking from "./pages/ConfirmBooking/ConfirmBooking";
 
-const PrivateRoute = ({ children, role }) => {
-  const token = localStorage.getItem("token");
-  const userRole = localStorage.getItem("role");
 
-  if (!token) return <Navigate to="/login" />;
-  if (role && userRole !== role) return <Navigate to="/login" />;
 
-  return children;
-};
+
 
 const App = () => {
+  
   return (
-    <div>
-      <Navbar />
+    <div>   <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> 
          <Route path="/register" element={<Register/>}/>        
          <Route path="/login" element={<Login/>}/>        
-        <Route path="/admin"element={<PrivateRoute role="admin"> <Admin /> </PrivateRoute> }/>      
-        <Route path="/user"element={<PrivateRoute role="user"> <User /> </PrivateRoute> }/>      
-         <Route path="/menu" element={<Menu/>}/>        
-         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/booking/:carId" element={<ProtectedRoute allowedRole={"user"}><Booking/></ProtectedRoute>} /> 
+       <Route path="/confirm-booking/:bookingId" element={<ProtectedRoute allowedRole="user"><ConfirmBooking /></ProtectedRoute>}/>
+       <Route path="/admin"element={<ProtectedRoute allowedRole="admin"><Admin /></ProtectedRoute>}/>
+       <Route path="/user"element={<ProtectedRoute allowedRole="user"><User /></ProtectedRoute>}/>   
+       <Route path="/menu" element={<Menu/>}/>        
+      <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
        <Footer/>
 
@@ -46,6 +45,7 @@ const App = () => {
 }
 
 export default App;
+
 
 
 
